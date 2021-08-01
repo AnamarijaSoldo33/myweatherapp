@@ -44,6 +44,5 @@ p {
 }
 
 .giturl {
-  display: block;
-  margin: auto 0px;
+  text-align: center;
 }
