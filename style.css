@@ -42,3 +42,8 @@ p {
 .fah {
   color: #ff3366;
 }
+
+.giturl {
+  display: block;
+  margin: auto 0px;
+}
