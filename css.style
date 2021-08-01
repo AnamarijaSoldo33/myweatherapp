@@ -1,0 +1,44 @@
+body {
+  font-family: "Shadows Into Light", cursive;
+  color: #ff3366;
+  background: #fff7f9;
+}
+
+h2 {
+  position: relative;
+  left: 500px;
+  top: 100px;
+}
+
+label,
+input {
+  position: relative;
+  top: -350px;
+  left: 500px;
+}
+
+.paris {
+  position: relative;
+  left: 340px;
+  top: 10px;
+}
+
+p {
+  font-size: 25px;
+  font-weight: bold;
+  position: relative;
+  top: -230px;
+}
+
+.days {
+  position: relative;
+  top: -160px;
+}
+
+.cel {
+  color: #ff3366;
+}
+
+.fah {
+  color: #ff3366;
+}
