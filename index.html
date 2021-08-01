@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Current Weather</h1>
+      <h2>
+        <strong id="city"> </strong>
+        <div id="time"></div>
+        <div id="description"></div>
+      </h2>
+      <img class="paris" src="images/tower.jpg" alt="tower" width="150px" />
+
+      <form id="form">
+        <label for="search">
+          <div class="locationsign">Current</div>
+          location
+        </label>
+        <input type="text" placeholder="Search" id="search" />
+        <input type="submit" value="search" />
+      </form>
+      <form id="form">
+        <label for="search">
+          <div class="locationsign">Current</div>
+          location
+        </label>
+        <input type="text" placeholder="Search" id="search" />
+        <input type="submit" value="search" />
+      </form>
+
+      <p>
+        <span id="number"></span>
+        <a href="#" id="celsius" class="cel">°C</a>
+
+        <br />
+        Humidity: <span id="humidity"> </span>
+
+        <br />
+        Wind:<span id="wind"></span>
+        <br />
+        <img
+          class="weather"
+          src="images/cloudy.jpg.png"
+          alt="cloudy"
+          width="100px"
+        />
+      </p>
+
+      <div class="row days">
+        <div class="col">
+          Mon
+          <br />
+          <img src="/images/monday.jpg" alt="monday" />
+          <br />
+          23°14°
+        </div>
+
+        <div class="col">
+          Tue
+          <br />
+          <img src="images/tuesday.jpg" alt="tuesday" />
+          <br />
+          18°14°
+        </div>
+
+        <div class="col">
+          Wed
+          <br />
+          <img src="images/wednesday.jpg" alt="wednesday" />
+          <br />
+          18°13°
+        </div>
+
+        <div class="col">
+          Thu
+          <br />
+          <img src="images/thursday.jpg" alt="thursday" />
+          <br />
+          22°14°
+        </div>
+
+        <div class="col">
+          Fri
+          <br />
+          <img src="images/friday.jpg" alt="friday" />
+          <br />
+          24°16°
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
