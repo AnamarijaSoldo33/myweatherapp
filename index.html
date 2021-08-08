@@ -27,7 +27,7 @@
       <h2>
         <strong id="city"> </strong>
         <div id="time"></div>
-        <div id="description"></div>
+        <div id="description" class="descr"></div>
       </h2>
       <img class="paris" src="images/tower.jpg" alt="tower" width="150px" />
 
@@ -40,29 +40,24 @@
         <input type="submit" value="search" />
       </form>
       <form id="form">
-        <label for="search">
-          <div class="locationsign">Current</div>
-          location
-        </label>
-        <input type="text" placeholder="Search" id="search" />
-        <input type="submit" value="search" />
-      </form>
-
+      
       <p>
         <span id="number"></span>
-        <a href="#" id="celsius" class="cel">°C</a>
+        <a href="#" id="celsius" class="cel">°C</a> |
+        <a href="#" id="fahrenheit">°F</a>
 
         <br />
-        Humidity: <span id="humidity"> </span>
+        Humidity: <span id="humidity"></span> %
 
         <br />
-        Wind:<span id="wind"></span>
+        Wind: <span id="wind"></span> km/h
         <br />
         <img
           class="weather"
-          src="images/cloudy.jpg"
+          src="images/cloudy.png"
           alt="cloudy"
           width="100px"
+          id="weather-image"
         />
       </p>
 
@@ -70,7 +65,7 @@
         <div class="col">
           Mon
           <br />
-          <img src="/images/monday.jpg" alt="monday" />
+          <img src="images/friday.jpg" alt="monday" />
           <br />
           23°14°
         </div>
@@ -108,11 +103,10 @@
         </div>
       </div>
     </div>
-    <footer>
-      <a href="https://github.com/AnamarijaSoldo33/myweatherapp" class="giturl"
-        >Github Url</a
-      >
-    </footer>
+    <div class="giturl">
+      <a href="https://github.com/AnamarijaSoldo33/myweatherapp">Github Url</a>
+    </div>
+
     <script src="index.js"></script>
   </body>
 </html>

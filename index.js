@@ -3,34 +3,35 @@ console.log(now.getDay());
 let days = ["Sunday", "Monday", "Wednesday", "Thursday", "Friday", "Saturday"];
 console.log(days[now.getDay()]);
 
-console.log(now.getHours());
-console.log(now.getMinutes());
+let hours = now.getHours();
+let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
+if (hours < 10) {
+  hours = `0${hours}`;
+}
 
 let currentDate = document.querySelector("#time");
 currentDate.innerHTML = `${now.getHours()}:${now.getMinutes()},
 ${days[now.getDay()]}`;
 
-function cityForm(event) {
-  event.preventDefault;
-  let apiKey = "35f30ee7920e9ed25d2d826417f88240";
-  let cityName = document.querySelector("#search").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showResults);
+function displayTemperature(response) {
+  let temperatureElement = document.querySelector("#number");
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = response.data.name;
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = response.data.main.humidity;
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 }
+let apiKey = "b5a2d192f3a1859ed576767031687843";
 
-function showResults(response) {
-  let someCity = document.querySelector("#city");
-  someCity.innerHTML = response.data.name;
-  let tempNow = Math.round(response.data.main.temp);
-  let currentTemp = document.querySelector("#number");
-  currentTemp.innerHTML = tempNow;
-  document.querySelector("#humidity").innerHTML = Math.round(
-    response.data.main.humidity
-  );
-  document.querySelector("#wind").innerHTML = response.data.wind.speed;
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
-}
+let cityName = "Paris";
 
-let searchForm = document.querySelector("#form");
-searchForm.addEventListener("submit", cityForm);
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+
+axios.get(apiUrl).then(displayTemperature);

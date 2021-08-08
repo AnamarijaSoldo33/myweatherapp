@@ -44,5 +44,10 @@ p {
 }
 
 .giturl {
-  text-align: center;
+  display: block;
+  margin: 50px 150px;
+}
+
+.descr {
+  text-transform: capitalize;
 }
