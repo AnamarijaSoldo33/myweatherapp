@@ -4,30 +4,8 @@ body {
   background: #fff7f9;
 }
 
-h2 {
-  position: relative;
-  left: 500px;
-  top: 100px;
-}
-
-label,
-input {
-  position: relative;
-  top: -350px;
-  left: 500px;
-}
-
-.paris {
-  position: relative;
-  left: 340px;
-  top: 10px;
-}
-
-p {
-  font-size: 25px;
-  font-weight: bold;
-  position: relative;
-  top: -230px;
+ul {
+  list-style: none;
 }
 
 .days {
@@ -37,10 +15,12 @@ p {
 
 .cel {
   color: #ff3366;
+  font-size: 25px;
 }
 
-.fah {
+.fahren {
   color: #ff3366;
+  font-size: 27px;
 }
 
 .giturl {
@@ -48,6 +28,34 @@ p {
   margin: 50px 150px;
 }
 
+.city-name,
+.time-now,
+.descr {
+  font-size: 35px;
+}
 .descr {
   text-transform: capitalize;
+}
+
+.temp-number{
+  font-size: 25px;
+}
+
+.weather{
+  position: relative;
+  margin top: 150px;
+  margin left: 500px;
+}
+
+.hum{
+font-size: 25px;
+}
+.win{
+  font-size: 25px;
+}
+
+.form-design{
+  position: relative;
+  margin-left: -120px;
+ margin-top: 40px;
 }

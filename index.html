@@ -23,44 +23,52 @@
 
   <body>
     <div class="container">
-      <h1>Current Weather</h1>
-      <h2>
-        <strong id="city"> </strong>
-        <div id="time"></div>
-        <div id="description" class="descr"></div>
-      </h2>
-      <img class="paris" src="images/tower.jpg" alt="tower" width="150px" />
-
-      <form id="form">
-        <label for="search">
-          <div class="locationsign">Current</div>
-          location
-        </label>
-        <input type="text" placeholder="Search" id="search" />
-        <input type="submit" value="search" />
+      <form id="form"  class="form-design">
+            <input
+              type="search"
+              placeholder="Type a city..."
+              id="city-input"
+            />
+            <input type="submit" value="search" />        
+        </div>
       </form>
-      <form id="form">
+      <br>
+      <br>
+<ul>
+  <li>
+    
       
-      <p>
-        <span id="number"></span>
-        <a href="#" id="celsius" class="cel">°C</a> |
-        <a href="#" id="fahrenheit">°F</a>
-
-        <br />
-        Humidity: <span id="humidity"></span> %
-
-        <br />
-        Wind: <span id="wind"></span> km/h
-        <br />
-        <img
+        <strong id="city" class="city-name"></strong>
+    <div id="time" class="time-now"></div>
+        <div id="description" class="descr"></div>
+        <div class="hum">Humidity: <span id="humidity"></span> %</div>
+        <div class="win">Wind:<span id="wind"></span> km/h</div>
+    
+          <img
           class="weather"
           src="images/cloudy.png"
           alt="cloudy"
           width="100px"
-          id="weather-image"
+          id="icon"
         />
-      </p>
 
+       <span class="temp-number" id="number">13</span>
+          <a href="#" id="celsius" class="cel">°C</a> |
+          <a href="#" id="fahrenheit" class="fahren">°F</a>
+        
+    </span>
+         
+      <br>
+      <br>    
+      
+  </li>
+</ul>
+      
+        <br />
+        <br />
+        <br />
+        <br>
+        <br>
       <div class="row days">
         <div class="col">
           Mon
