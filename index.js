@@ -17,6 +17,7 @@ currentDate.innerHTML = `${now.getHours()}:${now.getMinutes()},
 ${days[now.getDay()]}`;
 
 function displayTemperature(response) {
+  celsiusTemperature = response.data.main.temp;
   let temperatureElement = document.querySelector("#number");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   let cityElement = document.querySelector("#city");
@@ -47,7 +48,29 @@ function search(city) {
   axios.get(apiUrl).then(displayTemperature);
 }
 
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#number");
+  let fahrenheitTemerature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemerature);
+}
+
+function showCelsiusAgain(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#number");
+  let celsiusTemp = celsiusTemperature;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
 let searchForm = document.querySelector("#form");
 searchForm.addEventListener("submit", showResults);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsiusAgain);
 
 search("New York");
