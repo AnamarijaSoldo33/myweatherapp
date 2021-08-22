@@ -16,6 +16,27 @@ let currentDate = document.querySelector("#time");
 currentDate.innerHTML = `${now.getHours()}:${now.getMinutes()},
 ${days[now.getDay()]}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let ForecastHTML = ` <div class="row" >`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    ForecastHTML =
+      ForecastHTML +
+      `<div class="col-2" >
+        <div id="days">${day}</div>
+         <img src="images/thursday.jpg" alt="rainy"> 
+         <div id="forecast-temperatures">
+         <span id="max temp">18/</span>
+         <span id="min temp">12</span>
+        </div>
+    </div>
+`;
+  });
+  ForecastHTML = ForecastHTML + ` </div>`;
+  forecastElement.innerHTML = ForecastHTML;
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#number");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -47,14 +68,8 @@ function search(city) {
   axios.get(apiUrl).then(displayTemperature);
 }
 
-function showCelsiusAgain(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#number");
-  let celsiusTemp = celsiusTemperature;
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
 let searchForm = document.querySelector("#form");
 searchForm.addEventListener("submit", showResults);
 
 search("New York");
+displayForecast();

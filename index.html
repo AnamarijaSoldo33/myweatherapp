@@ -34,28 +34,17 @@
       </form>
       <br>
       <br>
-<ul>
-  <li>
-    
-      
+  <div class="row">
+      <div class="col-5">
         <strong id="city" class="city-name"></strong>
     <div id="time" class="time-now"></div>
         <div id="description" class="descr"></div>
         <div class="hum">Humidity: <span id="humidity"></span> %</div>
-        <div class="win">Wind:<span id="wind"></span> km/h</div>
-    <br>
-    <br>
-    <div class="row">
-      <div class="col-2">
-        Mon
-        <br>
-       <img src="images/thursday.jpg" alt="rainy">
-       <br>
-        18 /12
-      </div>
-    </div>
-    
-        <div class="center-elements">
+        <div class="win">Wind:<span id="wind"></span>  km/h</div>
+        </div>
+     <div class="col-5">
+
+    <span class="center-elements">
           <img
           class="weather"
           src="images/cloudy.png"
@@ -64,22 +53,28 @@
           id="icon"
         />
 
-       <span class="temp-number" id="number">13</span> <a href="#" id="celsius" class="cel">°C</a> 
+       <span class="temp-number" id="number">   
           
+        </span> °C 
         </span>
-         </div>
-      <br>
-      <br>    
-      
-  </li>
-</ul>
-      
-        <br />
-        <br />
-        <br />
         <br>
-        <br>
-      
+        </div>
+</div>
+<br>
+   <span class="forecast-weather" id="forecast" >
+     <div class="row" >
+      <div class="col-2" >
+        <div id="days">  Mon</div>
+         <img src="images/thursday.jpg" alt="rainy"> 
+        </div>
+        <div id="forecast-temperatures">
+         <span id="max temp">18/</span>
+         <span id="min temp">12</span>
+        </div> 
+      </div>
+    </div>
+</span>
+        
 
     <script src="index.js"></script>
   </body>

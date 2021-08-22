@@ -5,24 +5,13 @@ body {
   border: 1px solid #ff3366;
   border-radius: 30px;
   border-width: initial;
-
+  padding: 50px;
   max-width: 1000px;
 
-  margin: 30px auto;
-}
+  margin: 100px auto;
 
-ul {
-  list-style: none;
-}
-
-.days {
-  position: relative;
-  top: -160px;
-}
-
-.cel {
-  color: #ff3366;
-  font-size: 25px;
+  line-height: 50px;
+  box-sizing: 100px;
 }
 
 .temp-number {
@@ -40,10 +29,7 @@ ul {
 }
 
 .center-elements {
-  position: relative;
-  margin-left: 350px;
-  margin-top: -250px;
-  width: 150px;
+  font-size: 40px;
 }
 
 .hum {
@@ -59,6 +45,6 @@ ul {
   margin-top: 40px;
 }
 
-.row {
+.forecast-weather {
   font-size: 25px;
 }
