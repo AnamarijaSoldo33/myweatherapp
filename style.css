@@ -1,7 +1,14 @@
 body {
   font-family: "Shadows Into Light", cursive;
   color: #ff3366;
-  background: #fff7f9;
+  background: #ffff;
+  border: 1px solid #ff3366;
+  border-radius: 30px;
+  border-width: initial;
+
+  max-width: 1000px;
+
+  margin: 30px auto;
 }
 
 ul {
@@ -18,14 +25,9 @@ ul {
   font-size: 25px;
 }
 
-.fahren {
+.temp-number {
+  font-size: 40px;
   color: #ff3366;
-  font-size: 27px;
-}
-
-.giturl {
-  display: block;
-  margin: 50px 150px;
 }
 
 .city-name,
@@ -37,25 +39,26 @@ ul {
   text-transform: capitalize;
 }
 
-.temp-number{
+.center-elements {
+  position: relative;
+  margin-left: 350px;
+  margin-top: -250px;
+  width: 150px;
+}
+
+.hum {
+  font-size: 25px;
+}
+.win {
   font-size: 25px;
 }
 
-.weather{
+.form-design {
   position: relative;
-  margin top: 150px;
-  margin left: 500px;
+  margin-left: 40px;
+  margin-top: 40px;
 }
 
-.hum{
-font-size: 25px;
-}
-.win{
+.row {
   font-size: 25px;
-}
-
-.form-design{
-  position: relative;
-  margin-left: -120px;
- margin-top: 40px;
 }
