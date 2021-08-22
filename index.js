@@ -17,18 +17,20 @@ currentDate.innerHTML = `${now.getHours()}:${now.getMinutes()},
 ${days[now.getDay()]}`;
 
 function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let ForecastHTML = ` <div class="row" >`;
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
-  days.forEach(function (day) {
+
+  forecast.forEach(function (forecastDay) {
     ForecastHTML =
       ForecastHTML +
       `<div class="col-2" >
-        <div id="days">${day}</div>
-         <img src="images/thursday.jpg" alt="rainy"> 
+        <div id="days">${forecastDay.dt}</div>
+         <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+         alt="rainy" /> 
          <div id="forecast-temperatures">
-         <span id="max temp">18/</span>
-         <span id="min temp">12</span>
+         <span id="max temp">${forecastDay.temp.max} °/</span>
+         <span id="min temp">${forecastDay.temp.min} °</span>
         </div>
     </div>
 `;
