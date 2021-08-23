@@ -16,32 +16,43 @@ let currentDate = document.querySelector("#time");
 currentDate.innerHTML = `${now.getHours()}:${now.getMinutes()},
 ${days[now.getDay()]}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let ForecastHTML = ` <div class="row" >`;
-
-  forecast.forEach(function (forecastDay) {
-    ForecastHTML =
-      ForecastHTML +
-      `<div class="col-2" >
-        <div id="days">${forecastDay.dt}</div>
-         <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      ForecastHTML =
+        ForecastHTML +
+        `<div class="col-2" >
+        <div id="days">${formatDay(forecastDay.dt)}</div>
+         <img src="http://openweathermap.org/img/wn/${
+           forecastDay.weather[0].icon
+         }@2x.png" 
          alt="rainy" /> 
          <div id="forecast-temperatures">
-         <span id="max temp">${forecastDay.temp.max} °/</span>
-         <span id="min temp">${forecastDay.temp.min} °</span>
+         <span id="max temp">${Math.round(forecastDay.temp.max)} °/</span>
+         <span id="min temp">${Math.round(forecastDay.temp.min)} °</span>
         </div>
     </div>
 `;
+    }
   });
   ForecastHTML = ForecastHTML + ` </div>`;
   forecastElement.innerHTML = ForecastHTML;
 }
 
-function getForecast(cordinates) {
-  let apiurl = `https://api.openweathermap.org/data/2.5/onecall?
-lat=${cordinates.lat}&lon=${cordinates.lon}&appid=${apiKey}&units=metric`;
+function getForecast(coordinates) {
+  let apiKey = "b5a2d192f3a1859ed576767031687843";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?
+lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios(apiUrl).then(displayForecast);
 }
 

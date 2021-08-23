@@ -48,3 +48,7 @@ body {
 .forecast-weather {
   font-size: 25px;
 }
+
+.icon-style {
+  margin-left: -20px;
+}
